@@ -1,4 +1,4 @@
-function mergeSort(array, secondArray){
+function mergeSort(array){
 	/*if(array.length){
 		var newArray = split(array);
 		merge(mergeSort(newArray[0], newArray[1]);
@@ -6,10 +6,10 @@ function mergeSort(array, secondArray){
 //	return array[0];
 
 	if(array.length === 1){
-		return array[0]
+		return array[0];
 	} else {
-		var newArray = split(array);
-		mergeSort();
+		var splitArray = split(array);
+		merge(mergeSort(splitArray[0]), mergeSort(splitArray[1]));
 	}
 }
 
@@ -22,5 +22,9 @@ function split(wholeArray){
 }
 
 function merge(arr1, arr2){
-	return arr1.concat(arr2);
+	if(arr1 < arr2){
+		return arr1.concat(arr2);
+	} else if (arr1 > arr2){
+		return arr2.concat(arr1);
+	}
 }
