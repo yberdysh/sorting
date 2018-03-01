@@ -23,4 +23,12 @@ describe('Bubble Sort', function(){
     expect(swap.calls.count()).toEqual(13);
   });
 
+
+  it('expect 49 comparisons to have been made', function(){
+    spyOn(window, 'compare').and.callThrough();
+    expect( bubbleSort([7, 3, 6, 1, 9, 4, 2]) ).toEqual([1, 2, 3, 4, 6, 7, 9]);
+    expect(compare).toHaveBeenCalled();
+    expect(compare.calls.count()).toEqual(49);
+  });
+
 });
