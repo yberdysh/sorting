@@ -4,15 +4,18 @@ function bubbleSort(array){
     return array;
   } else {
     for (var i = 0; i < arr.length; i++){
-      if (arr[i] > arr[i+1]){
-        var result = swap(arr[i], arr[i+1]);
-        arr[i] = result[0];
-        arr[i+1] = result[1]
+      for (var j = 0; j < arr.length; j++){
+        if (arr[j] > arr[j+1]){
+        var result = swap(arr[j], arr[j+1]);
+        arr[j] = result[0];
+          arr[j+1] = result[1]
+        }
       }
     }
   }
   return arr;
 }
+
 
 function swap(var1, var2){
   return [var2, var1];
